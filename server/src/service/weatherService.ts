@@ -5,10 +5,25 @@ dotenv.config();
 interface Coordinates { lat: number, lon: number }
 
 // TODO: Define a class for the Weather object
+class Weather { constructor(public temp: number, public description: string) {} }
 
 // TODO: Complete the WeatherService class
 class WeatherService {
   // TODO: Define the baseURL, API key, and city name properties
+    baseURL: "";
+    apiKey: "";
+    city: "",
+    
+    constructor(baseURL: string, apiKey: string, city: string) {
+      this.baseURL = baseURL;
+      this.apiKey = apiKey;
+      this.city = city;
+    }
+  }
+  constructor(baseURL, apiKey, cityName) {
+    this.baseURL
+  }
+
   // TODO: Create fetchLocationData method
   private async fetchLocationData(query: string) {}
   // TODO: Create destructureLocationData method
@@ -19,7 +34,9 @@ class WeatherService {
     return `geo/1.0/direct?q=${this.cityName}&appid=${this.apiKey}`
   }
   // TODO: Create buildWeatherQuery method
-  private buildWeatherQuery(coordinates: Coordinates): string {}
+  private buildWeatherQuery(coordinates: Coordinates): string {
+    return `data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${this.apiKey}`
+  }
   // TODO: Create fetchAndDestructureLocationData method
   private async fetchAndDestructureLocationData() {}
   // TODO: Create fetchWeatherData method
