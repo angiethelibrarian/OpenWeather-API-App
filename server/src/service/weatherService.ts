@@ -7,6 +7,15 @@ interface Coordinates {
   lon: number;
 }
 
+interface WeatherResponse {
+  main: {
+    temp: number; 
+  };
+  weather: Array<{
+    description: string; 
+  }>;
+  list: WeatherResponse[]; // To hold multiple weather responses
+}
 
 class Weather {
   constructor(public temp: number, public description: string) {}
