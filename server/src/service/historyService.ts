@@ -1,4 +1,5 @@
 const fs = require('fs').promises;
+// import fs from 'fs/promises';
 const { v4: uuidv4 } = require('uuid');
 
 // TODO: Define a City class with name and id properties
