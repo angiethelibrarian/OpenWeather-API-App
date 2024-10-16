@@ -54,8 +54,16 @@ class HistoryService {
   // * BONUS TODO: Define a removeCity method that removes a city from the searchHistory.json file
   async removeCity(id: string) {
     const cities = await this.getCities();
-    const updatedCities = cities.filter(city => city.id !== id);
+    const updatedCities = cities.filter((city: { id: any; }) => city.id !== id);
     await this.write(updatedCities);
   }
 
 export default new HistoryService();
+
+function removeCity(_id: any, _string: any) {
+  throw new Error("Function not implemented.");
+}
+function addCity(_city: any, _string: any) {
+  throw new Error("Function not implemented.");
+}
+
